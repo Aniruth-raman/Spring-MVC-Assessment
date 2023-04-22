@@ -3,10 +3,14 @@ package com.spring.mvc.database;
 import com.spring.mvc.entity.Books;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class BooksDatabase {
+    @Autowired
     SessionFactory factory;
     public List<Books> getAllBooks() {
         Session session = factory.openSession();

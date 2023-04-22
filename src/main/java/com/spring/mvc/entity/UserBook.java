@@ -28,7 +28,7 @@ public class UserBook {
     private Users userId;
 
     @OneToOne
-    @JoinColumn(name="book_id", referencedColumnName = "book_Id")
+    @JoinColumn(name="book_id", referencedColumnName = "id")
     private Books bookId;
 
     @Column(name="read_later")

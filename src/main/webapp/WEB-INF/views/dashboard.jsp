@@ -34,12 +34,12 @@
     						<td>${book.book_name }</td>
     						<td>${book.author }</td>
     						<td>${book.genre }</td>
-    						<td><a style="margin: 7.5%"
+    						<!-- <td><a style="margin: 7.5%"
     							href="dashboard/readlater/${book.book_Id }"><i
     								class="fa fa-bookmark-o" style="color: black"></i></a> &nbsp; <a
     							href="dashboard/liked/${book.book_Id }"> <i
     								class="fa fa-heart-o" style="color: black"></i>
-    						</a></td>
+    						</a></td> -->
     					</tr>
     				</c:forEach>
 

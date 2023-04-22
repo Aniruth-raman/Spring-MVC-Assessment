@@ -1,6 +1,7 @@
 package com.spring.mvc.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -53,5 +54,12 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" + "id=" + id + ", email='" + email + '\'' + ", username='" + username + '\'' + ", password='" + password + '\'' + '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setFavorites(List<Books> favorites) {
     }
 }

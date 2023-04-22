@@ -1,4 +1,4 @@
-<%-- JSP Page Directive --%>
+<!-- <%-- JSP Page Directive --%>
 <%@page import="java.time.LocalDateTime" %>
 <%@page import="java.util.Date" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -38,4 +38,8 @@
 <h1>Welcome to Bookess</h1>
 </body>
 
-</html>
+</html> -->
+<!-- <jsp:forward page="/WEB-INF/views/dashboard.jsp" /> -->
+<!-- <script>
+	window.location.href="/db";
+</script> -->

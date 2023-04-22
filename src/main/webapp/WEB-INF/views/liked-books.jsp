@@ -16,16 +16,33 @@
 </head>
 
 <body>
-	<jsp:include page="/WEB-INF/views/header.jsp" />
-	<!--  http://localhost:8080/SpringMVCDemo/greet  -->
-	<% String id=(String) session.getAttribute("email"); if (id!=null) { %>
-		<div class="container">
-			<h1>Welcome ${sessionScope.username}</h1>
-		</div>
-		<%} %>
-			<div class="container">
-				<jsp:include page="/WEB-INF/views/books.jsp" />
-			</div>
+<h1>${sessionScope.username}'s Liked Books</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Book Name</th>
+			<th scope="col">Author</th>
+			<th scope="col">Genre</th>
+			<% String id=(String) session.getAttribute("email"); if (id!=null) { %>
+				<th scope="col">READ LATER/ LIKE</th>
+			<%} %>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach items="${books}" var="book">
+			<tr>
+				<td>${book.book_name}</td>
+				<td>${book.author}</td>
+				<td>${book.genre}</td>
+				<% if (id!=null) { %>
+					<td> <a href="${pageContext.request.contextPath}/remove-from-liked/${book.book_Id }"> Remove from Liked
+						</a></td>
+				<%} %>
+			</tr>
+		</c:forEach>
+
+	</tbody>
+</table>
 </body>
 
 </html>

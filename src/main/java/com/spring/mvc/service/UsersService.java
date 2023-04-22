@@ -1,7 +1,6 @@
 package com.spring.mvc.service;
 
 import com.spring.mvc.database.UsersDatabase;
-import com.spring.mvc.dto.LoginDTO;
 import com.spring.mvc.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +25,9 @@ public class UsersService {
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
+    }
+
+    public Users findByEmail(String email) {
+        return this.database.findByEmail(email);
     }
 }

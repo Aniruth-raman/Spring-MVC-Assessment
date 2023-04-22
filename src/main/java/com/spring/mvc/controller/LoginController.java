@@ -64,7 +64,7 @@ public class LoginController {
 		}
 		session.removeAttribute("email");
 		session.invalidate();
-		return "redirect:index.jsp";
+		return "redirect:/";
 	}
 
 	// @RequestMapping(path = "/login", method = RequestMethod.POST)
@@ -80,7 +80,8 @@ public class LoginController {
 				System.out.println("Inside the validate");
 				Cookie cookie = new Cookie("email", user.getEmail());
 				session.setAttribute("email", user.getEmail());
-				session.setAttribute("username", user.getUsername());
+				Users usr = this.usersService.findByEmail(user.getEmail());
+				session.setAttribute("username", usr.getUsername());
 				resp.addCookie(cookie);
 				return "redirect:dashboard";
 			}
